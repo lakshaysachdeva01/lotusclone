@@ -31,7 +31,7 @@ async function handleFetchImageGallery() {
           return `
               <div class="col-md-6 gallery-item">
             <div class="img-card">
-              <a href="albumimages.html?id=${item?._id}" title="" class="img-zoom">
+              <a href="albumimages.html" title="" class="img-zoom">
                 <div class="img-block">
                   <div class="wrapper-img">
                     <img
