@@ -315,8 +315,7 @@
   <!-- Mirrored from duruthemes.com/demo/html/patara/multipage-light/gallery-image.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Mar 2024 01:45:27 GMT -->
 </html>
 
- 
-<script>
+ <script>
     // API URL
     const API_URL = "https://api.webbuilder.technolitics.com/api/v1/website-builder/website/gallery/get-all-galleries/65e087f122e446767f0ff8c2";
 
@@ -327,56 +326,91 @@
     const urlParams = new URLSearchParams(window.location.search);
     const galleryId = urlParams.get("id"); // For example, ?id=65eeb9579aafadf4b165c64e
 
-    // Fetching the gallery data
-    async function fetchGallery() {
-      try {
-        const response = await fetch(API_URL);
-        const result = await response.json();
+    console.log("API URL:", API_URL);
+    console.log("Image Base Path:", IMAGE_PATH);
+    console.log("Gallery ID from URL:", galleryId);
 
-        if (result && result.data && result.data.length > 0) {
-          const filteredGallery = result.data.find(gallery => gallery._id === galleryId);
+    // Check if the gallery ID exists in the URL
+    if (!galleryId) {
+      console.error("No gallery ID found in the URL!");
+      document.getElementById("gallery").innerHTML = "<p>No gallery ID provided in the URL.</p>";
+    } else {
+      // Fetching the gallery data
+      async function fetchGallery() {
+        try {
+          const response = await fetch(API_URL);
 
-          if (filteredGallery) {
-            displayGallery(filteredGallery.mediaDetails.images);
-          } else {
-            document.getElementById("gallery").innerHTML = "<p>No gallery found for the given ID.</p>";
+          // Check if the API call was successful
+          if (!response.ok) {
+            console.error("Failed to fetch API:", response.status, response.statusText);
+            document.getElementById("gallery").innerHTML = "<p>Failed to load gallery data. Please try again later.</p>";
+            return;
           }
-        } else {
-          console.error("No galleries found in the API response");
+
+          const result = await response.json();
+
+          console.log("API Response:", result);
+
+          // Check if the API returned data
+          if (result && result.data && result.data.length > 0) {
+            console.log("Galleries:", result.data);
+            const filteredGallery = result.data.find(gallery => gallery._id === galleryId);
+
+            if (filteredGallery) {
+              console.log("Filtered Gallery:", filteredGallery);
+              if (filteredGallery.mediaDetails && filteredGallery.mediaDetails.images.length > 0) {
+                displayGallery(filteredGallery.mediaDetails.images);
+              } else {
+                console.error("No images found in the selected gallery:", filteredGallery);
+                document.getElementById("gallery").innerHTML = "<p>No images found in the gallery.</p>";
+              }
+            } else {
+              console.error("No matching gallery found for ID:", galleryId);
+              document.getElementById("gallery").innerHTML = "<p>No gallery found for the given ID.</p>";
+            }
+          } else {
+            console.error("No galleries found in the API response.");
+            document.getElementById("gallery").innerHTML = "<p>No galleries available.</p>";
+          }
+        } catch (error) {
+          console.error("Error fetching gallery data:", error);
+          document.getElementById("gallery").innerHTML = "<p>Error loading gallery data. Please try again later.</p>";
         }
-      } catch (error) {
-        console.error("Error fetching gallery data:", error);
       }
-    }
 
-    // Displaying the filtered gallery images
-    function displayGallery(images) {
-      const galleryContainer = document.getElementById("gallery");
+      // Displaying the filtered gallery images
+      function displayGallery(images) {
+        const galleryContainer = document.getElementById("gallery");
 
-      images.forEach(image => {
-        const imageElement = document.createElement("figure");
-        imageElement.className = "imagess";
-        imageElement.innerHTML = `
-       
-        <a class="btn-main image-popup" href="${IMAGE_PATH}${image}">
-         +</a>
-        
-        <img src="${IMAGE_PATH}${image}" alt="Gallery Image">
-      `;
-        galleryContainer.appendChild(imageElement);
-      });
+        images.forEach(image => {
+          const imageElement = document.createElement("figure");
+          imageElement.className = "imagess";
+          imageElement.innerHTML = `
+            <a class="btn-main image-popup" href="${IMAGE_PATH}${image}">
+              +
+            </a>
+            <img src="${IMAGE_PATH}${image}" alt="Gallery Image">
+          `;
+          galleryContainer.appendChild(imageElement);
+        });
 
-
-      $('.image-popup').magnificPopup({
-        type: 'image',
-        gallery: {
-          enabled: true
+        // Initialize Magnific Popup
+        if ($('.image-popup').length > 0) {
+          console.log("Initializing Magnific Popup for", $('.image-popup').length, "elements.");
+          $('.image-popup').magnificPopup({
+            type: 'image',
+            gallery: {
+              enabled: true
+            }
+          });
+        } else {
+          console.error("No .image-popup elements found for Magnific Popup.");
         }
-      });
-    }
+      }
 
-    // Initialize
-    fetchGallery();
+      // Initialize
+      fetchGallery();
+    }
   </script>
 
 </html>
