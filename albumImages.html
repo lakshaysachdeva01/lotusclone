@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <!-- Mirrored from duruthemes.com/demo/html/patara/multipage-light/gallery-image.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Mar 2024 01:45:27 GMT -->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+
+    <!-- SEO DETAILS START -->
+    <!-- Page Title -->
+    <title>Capture Moments - Hotel Lotus Resort Raipur Image Gallery</title>
+
+    <!-- Meta Description for SEO -->
+    <meta
+      name="description"
+      content="Browse through a visual journey of our luxurious facilities, beautiful gardens, and memorable events in the Capture Moments - Hotel Lotus Resort Raipur Image Gallery."
+    />
+
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta
+      property="og:title"
+      content="Capture Moments - Hotel Lotus Resort Raipur Image Gallery"
+    />
+    <meta
+      property="og:description"
+      content="Browse through a visual journey of our luxurious facilities, beautiful gardens, and memorable events in the Capture Moments - Hotel Lotus Resort Raipur Image Gallery."
+    />
+    <meta
+      property="og:image"
+      content="https://www.lotusresortraipur.com/img/meta_image.png"
+    />
+    <meta property="og:url" content="https://www.lotusresortraipur.com/" />
+
+    <!-- Twitter Meta Tags for Social Sharing -->
+    <meta
+      name="twitter:card"
+      content="https://www.lotusresortraipur.com/img/meta_image.png"
+    />
+    <meta
+      name="twitter:title"
+      content="Capture Moments - Hotel Lotus Resort Raipur Image Gallery"
+    />
+    <meta
+      name="twitter:description"
+      content="Browse through a visual journey of our luxurious facilities, beautiful gardens, and memorable events in the Capture Moments - Hotel Lotus Resort Raipur Image Gallery."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.lotusresortraipur.com/img/meta_image.png"
+    />
+    <!-- SEO DETAILS END -->
+
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&amp;family=Outfit:wght@300;400&amp;display=swap"
+    />
+    <link rel="stylesheet" href="css/plugins.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div class="preloader-bg"></div>
+    <div id="preloader">
+      <div id="preloader-status">
+        <div class="preloader-position loader"><span></span></div>
+      </div>
+    </div>
+    <!-- Progress scroll totop -->
+    <div class="progress-wrap cursor-pointer">
+      <svg
+        class="progress-circle svg-content"
+        width="100%"
+        height="100%"
+        viewBox="-1 -1 102 102"
+      >
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </div>
+
+    <!-- Navbar Start-->
+    <div id="navbar-layout-container"></div>
+    <!-- Navbar End-->
+
+    <!-- Header Banner -->
+    <div
+      class="banner-header full-height section-padding valign bg-img bg-fixed"
+      data-overlay-dark="4"
+      data-background="img/slider/5.jpg"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center caption">
+            <h5>Hotel Gallery</h5>
+            <h1>Image Gallery</h1>
+          </div>
+        </div>
+      </div>
+      
+      <a href="#" data-scroll-nav="1" class="mouse smoothscroll">
+        <span class="mouse-icon"> <span class="mouse-wheel"></span> </span>
+      </a>
+    </div>
+    <!-- Image Gallery -->
+    <!-- <section class="section-padding" >
+        <div class="container" id="gallery">
+          <div class="row imagess"></div>
+        </div>
+      </section> -->
+      <div class="container cont_full" data-scroll-index="1">
+        <div id="gallery" class="gallery">
+         
+        </div>
+      </div>
+     <style>
+        figure img {
+  
+            display: block;
+          }
+          .imagess{
+            position: relative;
+          display: grid;
+          margin-bottom: 30px;
+          }
+          
+          figure {
+            display: grid;
+            grid-template-rows: 1fr auto;
+            break-inside: avoid;
+          }
+          #main-gallery #gallery , .home-gallery #gallery{
+            
+            display: flex;
+            flex-wrap: wrap;
+          margin: 5px;
+            /* margin-left:0px 100px; */
+           
+          }
+          .cont_full #gallery{
+            justify-content: center;
+            display: flex;
+            flex-wrap: wrap;
+          
+            /* margin-left:0px 100px; */
+           
+          }
+          .cover-span{
+            position: relative;
+            height: 250px;
+            width: 355px;
+            overflow: hidden;
+          
+          }
+          .cover-anime{
+            position: absolute;
+            
+            left: 0;
+            bottom: -100%;
+          height: 100%;
+          width: 100%;
+          background-color: #322347e6;
+          font-size: 25px;
+          color: white;
+          font-family: roboto;
+          font-weight: 600;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          opacity: 0;
+          
+          transition: bottom 0.6s ease;
+          
+          }
+          .cover-anime h3{
+            height: auto;
+            padding: 35px;
+            font-weight: 500;
+            
+          }
+           .cover-anime h3:hover{
+            background: linear-gradient(270deg, #ff512f -1.84%, #e33683 103.16%);
+            background-clip: text;
+            color: transparent;
+          
+          }
+          .cover-span:hover .cover-anime  {
+            bottom: 0; /* When hovered, the overlay slides up to cover the image */
+            
+          }
+          
+          .btn-main{
+            z-index: 999;
+            height: 100%;
+            width: 100%;
+           display: none
+        ;
+        background-color: rgb(170 132 83 / 80%);;
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            font-weight: 200;
+            color: white !important;
+          }
+          .imagess:hover .btn-main{
+            display: flex !important;
+          }
+
+          .cover-span:hover .cover-image {
+            transform: scale(1.05); /* Optional zoom effect on the image when hovering */
+          }
+          .cover-anime:hover{
+            opacity: 1;
+            
+          }
+          .cover-anime a{
+            text-decoration: none;
+            
+          display: flex;
+          align-items: center;
+            position: absolute;
+            justify-content: center;
+            right: 0;
+            bottom: 0;
+            height: 56px;
+            width: 56px;
+            font-size: 25px;
+            background: linear-gradient(90deg, rgba(50, 60, 141, 1) 0%, rgba(50, 60, 141, 1) 35%, rgba(27, 33, 87, 1) 100%);
+            color: white;
+            font-weight: bold;
+            border-top: 3px white solid;
+            border-left: 3px white solid;
+          }
+          
+          
+          .cont_full{
+            position: relative;
+            column-count: 3 ;
+            column-gap: 30px;
+          }
+          .cont_full{  
+            max-width: 1200px;
+            margin: 170px auto 80px auto ;
+          }
+          
+          .cont_full img{
+            width: 360px;
+            height: auto;
+          }
+          
+.mfp-img{
+    height: 500px !important;
+}
+
+          @media (max-width:425px) {
+            .cont_full img{
+              width: 375px;
+              height: auto;
+            }
+            
+          }
+          @media (max-width:395px) {
+            .cont_full img{
+              width: 350px;
+              height: auto;
+            }
+            
+          }
+     </style>
+
+
+    <!-- Footer Start-->
+    <div id="footer-layout-container"></div>
+    <!-- Footer End-->
+
+    <!-- jQuery -->
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/jquery-migrate-3.0.0.min.js"></script>
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/jquery.isotope.v3.0.2.js"></script>
+    <script src="js/pace.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scrollIt.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/jquery.magnific-popup.js"></script>
+    <script src="js/YouTubePopUp.js"></script>
+    <script src="js/select2.js"></script>
+    <script src="js/datepicker.js"></script>
+    <script src="js/smooth-scroll.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/custom.js"></script>
+
+    <!-- UTILS -->
+    <script src="js/API/config.js"></script>
+    <script src="js/utils/functions.js"></script>
+
+    <!-- COMPONENTS -->
+    <script src="data/appConfig.js"></script>
+    <script src="js/components/navbar.js"></script>
+    <script src="js/components/footer.js"></script>
+
+    <!-- API -->
+    <script src="js/API//services/authServices.js"></script>
+    <script src="js/API//services/imageGalleryServices.js"></script>
+  </body>
+
+  <!-- Mirrored from duruthemes.com/demo/html/patara/multipage-light/gallery-image.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Mar 2024 01:45:27 GMT -->
+</html>
+
+ 
+<script>
+    // API URL
+    const API_URL = "https://api.webbuilder.technolitics.com/api/v1/website-builder/website/gallery/get-all-galleries/65e087f122e446767f0ff8c2";
+
+    // Image Base Path
+    const IMAGE_PATH = "https://technolitics-s3-bucket.s3.ap-south-1.amazonaws.com/websitebuilder-s3-bucket/";
+
+    // Get the gallery ID from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const galleryId = urlParams.get("id"); // For example, ?id=65eeb9579aafadf4b165c64e
+
+    // Fetching the gallery data
+    async function fetchGallery() {
+      try {
+        const response = await fetch(API_URL);
+        const result = await response.json();
+
+        if (result && result.data && result.data.length > 0) {
+          const filteredGallery = result.data.find(gallery => gallery._id === galleryId);
+
+          if (filteredGallery) {
+            displayGallery(filteredGallery.mediaDetails.images);
+          } else {
+            document.getElementById("gallery").innerHTML = "<p>No gallery found for the given ID.</p>";
+          }
+        } else {
+          console.error("No galleries found in the API response");
+        }
+      } catch (error) {
+        console.error("Error fetching gallery data:", error);
+      }
+    }
+
+    // Displaying the filtered gallery images
+    function displayGallery(images) {
+      const galleryContainer = document.getElementById("gallery");
+
+      images.forEach(image => {
+        const imageElement = document.createElement("figure");
+        imageElement.className = "imagess";
+        imageElement.innerHTML = `
+       
+        <a class="btn-main image-popup" href="${IMAGE_PATH}${image}">
+         +</a>
+        
+        <img src="${IMAGE_PATH}${image}" alt="Gallery Image">
+      `;
+        galleryContainer.appendChild(imageElement);
+      });
+
+
+      $('.image-popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true
+        }
+      });
+    }
+
+    // Initialize
+    fetchGallery();
+  </script>
+
+</html>
