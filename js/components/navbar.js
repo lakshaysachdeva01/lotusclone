@@ -32,42 +32,34 @@ function navbarDesign() {
               <a class="nav-link" href="index.html#about-home-container">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="rooms.html">Rooms</a>
+              <a class="nav-link" href="/rooms.html">Rooms</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="wedding.html">Wedding</a>
+              <a class="nav-link" href="/wedding.html">Wedding</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="mice.html">Mice</a>
+              <a class="nav-link" href="/mice.html">Mice</a>
             </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                data-bs-auto-close="outside"
-                aria-expanded="false"
-                >Gallery <i class="ti-angle-down"></i
-              ></a>
+             <li class="nav-item dropdown nav-link dropdown-toggle" style="cursor:pointer;">
+             Gallery <i class="ti-angle-down"></i>
               <ul class="dropdown-menu">
                 <li>
-                  <a href="gallery-image.html" class="dropdown-item"
+                  <a href="/gallery-image.html" class="dropdown-item"
                     ><span>Image Gallery</span></a
                   >
                 </li>
                 <li>
-                  <a href="gallery-video.html" class="dropdown-item"
+                  <a href="/gallery-video.html" class="dropdown-item"
                     ><span>Video Gallery</span></a
                   >
                 </li>
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="blog.html">Blog</a>
+              <a class="nav-link" href="/blog.html">Blog</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link" href="/contact.html">Contact</a>
             </li>
           </ul>
         </div>
